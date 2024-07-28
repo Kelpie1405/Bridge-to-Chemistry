@@ -1,0 +1,65 @@
+/* ----------
+見出し ver.2
+---------- */
+.heading2 {
+    position: relative;
+    border-bottom: 7px solid rgb(136, 19, 55);
+    font-size: 2.5em
+}
+
+.heading2:before {
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 20%;
+    height: 7px;
+    content: '';
+    background: rgb(254, 169, 16);
+}
+
+/* ----------
+クイズ機能
+---------- */
+
+/* 問題の囲み戦
+---------- */
+.crossing-line {
+    margin: 2em 0;
+    position: relative;
+    padding: 0.5em 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+
+.crossing-line:before, .crossing-line:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+
+.crossing-line:before {left: 10px;}
+.crossing-line:after {right: 10px;}
+.crossing-line p {
+    margin: 0; 
+    padding: 0;
+}
+
+
+
+/* 選択肢
+---------- */
+.quiz-choice {
+    accent-color: rgb(136, 19, 55);
+    inline-size: 1.5em;
+    block-size: 1.5em;
+}
+
+.selected-quiz-choice {
+    border: none;
+    color:  rgb(136, 19, 55);
+    box-shadow:  0 0 0 0.25rem rgba(136, 19, 55, 0.5);
+}
