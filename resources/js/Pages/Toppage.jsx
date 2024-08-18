@@ -45,7 +45,7 @@ const ArticleList = (props) => {
             
             <hr className="my-2"/>
             
-            <CardGroup posts={posts} /> 
+            <CardGroup posts={posts} url={url} /> 
         </>
     );
 };

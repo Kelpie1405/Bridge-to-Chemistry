@@ -15,7 +15,7 @@ const Index = (props) => {
     const [sortOrder, setSortOrder] = useState('latest');
     
     const sortOrderOptions = [
-        {id: 'latest', name: '最新順'},
+        {id: 'latest', name: '新着順'},
         {id: 'oldest', name: '古い順'}
     ];
     
@@ -60,8 +60,12 @@ const Index = (props) => {
             <Searchbox name='seachPosts' onChange={setSearchKeyword} placeholder='キーワード検索' />
             
             <Accordion header='詳細検索'>
-                <Selectbox label='分野' name='field' options={fields} onChange={setSelectedField} />
-                <Selectbox label='難易度' name='level' options={levels} onChange={setSelectedLevel} />
+                <span className="me-3">
+                    <Selectbox label='分野' name='field' options={fields} onChange={setSelectedField} />
+                </span>
+                <span className="me-3">
+                    <Selectbox label='難易度' name='level' options={levels} onChange={setSelectedLevel} />
+                </span>
                 <Selectbox label='並び替え' name='sortOrder' options={sortOrderOptions} onChange={setSortOrder} />
             </Accordion>
             

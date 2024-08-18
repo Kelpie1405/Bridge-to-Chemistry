@@ -21,10 +21,6 @@ export default function Carousel({ posts }) {
                     <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
                         <a href={post.category_id === 1 ? `/articles/${post.id}` : `/columns/${post.id}`}>
                             <img src={post.image} className="d-block w-100" alt="..." />
-                            <div className="carousel-caption d-none d-md-block">
-                                <h3>{post.title}</h3>
-                                <p>{post.lede}</p>
-                            </div>
                         </a>
                     </div>
                 ))}
