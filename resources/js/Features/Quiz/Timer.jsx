@@ -9,6 +9,13 @@ const Timer = (props) => {
     // 初回レンダリング時のtimerIntervalが生成される
     // disabledがtrueになり次第、timerIntervalとタイマーが止まる
     useEffect(() => {
+        let startTime = sessionStorage.getItem('startTime');
+        
+        if (!startTime) {
+            startTime = Date.now();
+            sessionStorage.setItem('startTime', startTime);
+        }
+        
         const timerInterval = setInterval(() => {
             const elapsedTime = Date.now() - startTime;
             const remainingTime = timeLimit - elapsedTime;
@@ -18,6 +25,7 @@ const Timer = (props) => {
             } else {
                 setRemainingTime(0);
                 clearInterval(timerInterval);
+                sessionStorage.removeItem('startTime');
                 onTimeout();
             }
         }, 500);

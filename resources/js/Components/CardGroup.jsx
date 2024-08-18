@@ -1,5 +1,5 @@
 const Card = (props) => {
-    const { post } = props;
+    const { post, url } = props;
     
     const formatDate = (timestamp) =>{
         const date = new Date(timestamp);
@@ -12,23 +12,25 @@ const Card = (props) => {
     
     return (
         <div class="card">
-            <img src={post.image} class="card-img-top" alt="..." />
-            <div class="card-body">
-                <h5 class="card-title">{post.title}</h5>
-                <p class="card-text">{post.lede}</p>
-                <p class="card-text"><small class="text-body-secondary">{formatDate(post.created_at)}</small></p>
-            </div>
+            <a href={`/${url}/${post.id}`}>
+                <img src={post.image} class="card-img-top" alt="アイキャッチ画像" />
+                <div class="card-body">
+                    <h5 class="card-title">{post.title}</h5>
+                    <p class="card-text">{post.lede}</p>
+                    <p class="card-text"><small class="text-body-secondary">{formatDate(post.created_at)}</small></p>
+                </div>
+            </a>
         </div>
     );
 };
 
 const CardGroup = (props) => {
-    const { posts } = props;
+    const { posts, url } = props;
     
     return (
         <div class="card-group">
             {posts.map((post) =>(
-                <Card key={post.id} post={post} />
+                <Card key={post.id} post={post} url={url} />
             ))}
         </div>
     );

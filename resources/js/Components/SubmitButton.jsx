@@ -10,7 +10,7 @@ const BackButton = (props)  => {
     };
     
     return (
-        <div className="m-2 d-flex justify-content-center">
+        <div className="m-3 d-flex justify-content-center">
             <button type='button' onClick={onClick} className="px-2 py-1 rounded-3 fs-5 fw-semibold" style={style}>
                 <FontAwesomeIcon icon={faCircleChevronRight} /> {label}
             </button>

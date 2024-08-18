@@ -11,7 +11,7 @@ export default function NormalLayout({ children }) {
             <header className="d-flex align-items-center justify-content-between" style={headerStyle}>
                 <div className="ms-5">
                     <a href="/">
-                        <img src="site_logo.gif" alt='site-logo' />
+                        <img src="/site_logo.gif" alt='site-logo' />
                     </a>
                 </div>
                 

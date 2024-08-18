@@ -50,7 +50,13 @@ const Quiz = (props) => {
             <div className="row align-items-center mb-3">
                 <div className="col-4"></div>
                 
-                <div className="col-4 text-center fs-4 fw-bold">{result}</div>
+                <div className={`col-4 text-center fs-2 fw-bold ${
+                    result === '〇正解'
+                        ? 'text-danger'
+                        : result === '×不正解'
+                            ? 'text-primary'
+                            : 'text-success'
+                }`}>{result}</div>
                 
                 <div className="col-4 d-flex justify-content-end">
                     <Timer timeLimit={timeLimit} onTimeout={handleTimeout} disabled={isDisabled} />
